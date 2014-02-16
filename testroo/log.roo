@@ -1,0 +1,33 @@
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-02-16 14:52:05
+project --topLevelPackage com.web.simple --projectName testroo --java 6 --packaging WAR
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2014-02-16 14:52:09
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-02-16 14:52:44
+jpa setup --provider HIBERNATE --database MYSQL --hostName localhost --userName root --databaseName baseroo
+entity jpa --class ~.domain.Topping --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+entity jpa --class ~.domain.Base --testAutomatically
+field string --fieldName name --notNull --sizeMin 2
+entity jpa --class ~.domain.Pizza --testAutomatically 
+field string --fieldName name --notNull --sizeMin 2
+field number --fieldName price --type java.lang.Float 
+field reference --fieldName base --type ~.domain.Base
+entity jpa --class ~.domain.PizzaOrder --testAutomatically 
+field string --fieldName name --notNull --sizeMin 2
+field string --fieldName address --sizeMax 30
+field number --fieldName total --type java.lang.Float 
+field date --fieldName deliveryDate --type java.util.Date
+field set --fieldName pizzas --type ~.domain.Pizza
+perform eclipse
+perform eclipse
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2014-02-16 15:13:28
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log opened at 2014-02-16 15:16:13
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+perform eclipse
+web mvc setup
+web mvc all --package ~.web
+perform package
+security setup
+// Spring Roo 1.2.5.RELEASE [rev 8341dc2] log closed at 2014-02-16 16:17:56
